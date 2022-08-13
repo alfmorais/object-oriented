@@ -1,18 +1,30 @@
-data = {
-    "account_number": "1293471-8",
-    "agency": "3108",
-    "bank": "Bradesco",
-    "city": "Ipixuna Do Para",
-    "state": "PA",
-    "name": "Diego Julio Ribeiro",
-    "document": "936.143.434-99",
-    "birthday": "24/04/2002",
-    "cellphone": "(94) 98248-7328",
-}
+# pendencies for class
+# 1:TODO: To create a regex form for account number value
+# 2:TODO: To create a validate method or external lib to document
+# 3:TODO: To create a regex form for document
+# 4:TODO: To create a regex form for birthday
+# 5:TODO: To create a regex form for cellphone
 
 
 class Account:
-    def __init__(self, account_number, agency, bank, city, state, name, document, birthday, cellphone, balance, limit):
+    """
+    Class to represent the account object.
+    """
+
+    def __init__(
+        self,
+        account_number: str,
+        agency: str,
+        bank: str,
+        city: str,
+        state: str,
+        name: str,
+        document: str,
+        birthday: str,
+        cellphone: str,
+        balance: float,
+        limit: float,
+    ):
         self.account_number = account_number
         self.agency = agency
         self.bank = bank
@@ -24,3 +36,6 @@ class Account:
         self.cellphone = cellphone
         self.balance = balance
         self.limit = limit
+
+    def __str__(self):
+        return f"{self.account_number} - {self.name}"
